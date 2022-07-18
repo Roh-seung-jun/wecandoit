@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-4.4.1/dist/js/bootstrap.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1/dist/css/bootstrap.css">
+    <script src="js/chart.js"></script>
+    <style>
+        .garden p {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+        }
+        .garden p span {
+            display: block;
+            height: 2px;
+            width: 10px;
+            margin-right: 5px;
+        }
+        .garden p.select { background: #ddd; }
+        .garden p, #labels p { cursor: pointer; }
+        .labels p.none { text-decoration: line-through; }
+        .labels p{cursor: pointer}
+    </style>
+</head>
+<body style="height: 100vh">
+<div class="d-flex w-100 h-100 justify-content-center align-items-center flex-column">
+    <div class="garden d-flex w-50 justify-content-between">
+
+    </div>
+    <div class="w-100 d-flex justify-content-center align-items-center">
+        <div class="d-flex flex-column labels" style="width: 100px">
+
+        </div>
+        <canvas id="canvas" width="1200" height="800" style="border: 1px solid #dee2e6"></canvas>
+    </div>
+</div>
+</body>
+</html>

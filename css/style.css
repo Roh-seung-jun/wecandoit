@@ -1,0 +1,49 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+:root{
+    --width:2048px;
+    --height:2048px;
+    --center:calc(2048px / 4);
+}
+
+.wrapper{
+    height: 100vh;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    perspective: calc(var(--center));
+}
+
+.view_box{
+    width: 0;
+    height: 0;
+    position:relative;
+    transform-style: preserve-3d;
+    transform: translateZ(var(--center));
+}
+
+.scene{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    margin-left: calc(var(--width) / -2);
+    margin-top: calc(var(--height) / -2);
+    backface-visibility: hidden;
+    object-fit: cover;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+p{background-color: rgba(0,0,0,.7);color: #fff;padding: 10px;border-radius: 10px;}
+.scene.front { transform: translateZ(calc(var(--width) / -2 + 1px))}
+.scene.back { transform: translateZ(calc(var(--width) / 2 - 1px)) rotateY(180deg)}
+.scene.left { transform: translateX(calc(var(--width) / -2 + 1px)) rotateY(90deg)}
+.scene.right { transform: translateX(calc(var(--width) / 2 - 1px)) rotateY(-90deg)}
+.scene.top { transform: translateY(calc(var(--height) / -2 + 1px)) rotateX(-90deg)}
+.scene.bottom { transform: translateY(calc(var(--height) / 2 - 1px)) rotateX(90deg)}

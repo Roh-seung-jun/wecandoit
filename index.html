@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(()=>{
+            $(document)
+            .on('click','.box',function(){
+                const garden = $(this).attr('data-value');
+                window.open(`./viewer.html?${garden}`,'_blank',`width=1920,height=1080`)
+            })
+        })
+    </script>
+    <link rel="stylesheet" href="bootstrap-4.4.1/dist/css/bootstrap.css">
+</head>
+<body>
+
+<div class="position-fixed d-flex justify-content-between w-75" style="top: 90%;left: 50%;transform: translate(-50%,-50%);z-index: 99">
+    <p class="m-0 box" data-value="나폴리농원">나폴리농원</p>
+    <p class="m-0 box" data-value="남해토피아랜드">남해토피아랜드</p>
+    <p class="m-0 box" data-value="농부가그린정원">농부가그린정원</p>
+    <p class="m-0 box" data-value="만화방초정원">만화방초정원</p>
+    <p class="m-0 box" data-value="새미골정원">새미골정원</p>
+    <p class="m-0 box" data-value="섬이정원">섬이정원</p>
+    <p class="m-0 box" data-value="옥동힐링가든">옥동힐링가든</p>
+    <p class="m-0 box" data-value="춘화의정원">춘화의정원</p>
+    <a class="m-0" href="./chart.html">차트 구경하기</a>
+</div>
+</body>
+</html>
